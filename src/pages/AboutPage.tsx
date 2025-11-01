@@ -1,5 +1,10 @@
 import { Target, Lightbulb, TrendingUp, Users, Award, Rocket } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
+import Founder from '../assets/Founder.png';
+import CreativeDirector from '../assets/CreativeDirector.png';
+import StrategyLead from '../assets/StrategyLead.png';
+import TechDirector from '../assets/TechDirector.png';
+import HeadOfDigital from '../assets/TechOfDigital.png';
 
 export default function AboutPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,12 +47,31 @@ export default function AboutPage() {
   ];
 
   const team = [
-    { name: 'Alexander Wijaya', role: 'Founder & CEO' },
-    { name: 'Diana Kusuma', role: 'Creative Director' },
-    { name: 'Michael Santoso', role: 'Strategy Lead' },
-    { name: 'Priscilla Tan', role: 'Head of Digital' },
-    { name: 'Ryan Firmansyah', role: 'Tech Director' },
-    { name: 'Sarah Lim', role: 'Client Success Lead' },
+    {
+      name: 'Alexander Wijaya',
+      role: 'Founder & CEO',
+      image: Founder
+    },
+    {
+      name: 'Diana Kusuma',
+      role: 'Creative Director',
+      image: CreativeDirector
+    },
+    {
+      name: 'Michael Santoso',
+      role: 'Strategy Lead',
+      image: StrategyLead
+    },
+    {
+      name: 'Bambang',
+      role: 'Head of Digital',
+      image: HeadOfDigital
+    },
+    {
+      name: 'Ryan Firmansyah',
+      role: 'Tech Director',
+      image: TechDirector
+    },
   ];
 
   return (
@@ -57,9 +81,8 @@ export default function AboutPage() {
           <div className="absolute top-20 left-10 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
         </div>
         <div
-          className={`max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
+          className={`max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
         >
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             We Create Impactful
@@ -114,9 +137,8 @@ export default function AboutPage() {
               {milestones.map((milestone, index) => (
                 <div
                   key={index}
-                  className={`flex items-center ${
-                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                  } gap-8`}
+                  className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                    } gap-8`}
                 >
                   <div className={`flex-1 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
                     <div className="inline-block p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
@@ -171,7 +193,7 @@ export default function AboutPage() {
           <p className="text-xl text-gray-600 mb-16 text-center max-w-3xl mx-auto">
             Talented individuals passionate about digital excellence
           </p>
-          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
             {team.map((member, index) => (
               <div
                 key={index}
@@ -179,7 +201,16 @@ export default function AboutPage() {
               >
                 <div className="relative mb-4 overflow-hidden rounded-2xl bg-gradient-to-br from-[#003366] to-[#00AEEF] aspect-square">
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <Users size={48} className="text-white opacity-50" />
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-30 h-auto object-cover object-center"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <Users size={48} className="text-white/80" />
+                    )}
                   </div>
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all"></div>
                 </div>

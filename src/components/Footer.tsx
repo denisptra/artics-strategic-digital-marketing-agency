@@ -1,4 +1,5 @@
-import { Mail, MapPin, Phone, Linkedin, Instagram, Dribbble } from 'lucide-react';
+import { Mail, MapPin, Phone, Linkedin, Instagram, Youtube } from 'lucide-react';
+import LogoWhite from '../assets/LogoWhite.svg';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -16,10 +17,13 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#00AEEF] to-[#FF6B35] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">A</span>
+              <div className="w-16 h-16 flex items-center justify-center">
+                <img
+              src={LogoWhite}
+              alt="ARTICS logo"
+              className="w-16 h-16 object-contain rounded-lg transform group-hover:scale-105 transition-transform"
+            />
               </div>
-              <span className="text-white font-bold text-xl">ARTICS</span>
             </div>
             <p className="text-white/70 leading-relaxed">
               Strategic digital marketing partner creating impactful experiences
@@ -64,7 +68,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={18} className="text-[#FF6B35] flex-shrink-0" />
-                <span className="text-white/70">hello@artics.id</span>
+                <span className="text-white/70">hello@artics.co.id</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={18} className="text-[#FF6B35] flex-shrink-0" />
@@ -77,29 +81,29 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-white/70 text-sm">
-              © 2024 PT Artics Digital Creative Agency. All rights reserved.
+              © 2025 PT Artics Communication. All rights reserved.
             </p>
             <div className="flex items-center space-x-6">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/artik-komunikasi/"
                 className="text-white/70 hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/artics.communication"
                 className="text-white/70 hover:text-white transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@articscommunication"
                 className="text-white/70 hover:text-white transition-colors"
                 aria-label="Dribbble"
               >
-                <Dribbble size={20} />
+                <Youtube size={20} />
               </a>
             </div>
           </div>

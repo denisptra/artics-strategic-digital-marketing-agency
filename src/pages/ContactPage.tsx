@@ -84,11 +84,9 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-[#003366] mb-2">Office Location</h3>
                     <p className="text-gray-600">
-                      Menara BCA, 46th Floor
-                      <br />
-                      Grand Indonesia, Jakarta
-                      <br />
-                      Indonesia 10310
+                      Jl. Tebet Barat Dalam VIII No.12, <br/>
+                      RT.3/RW.5, Tebet Bar., Kec. Tebet, <br/>
+                      Kota Jakarta Selatan, 
                     </p>
                   </div>
                 </div>
@@ -99,8 +97,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-[#003366] mb-2">Email</h3>
-                    <p className="text-gray-600">hello@artics.id</p>
-                    <p className="text-gray-600">business@artics.id</p>
+                    <p className="text-gray-600">hello@artics.co.id</p>
+                    <p className="text-gray-600">business@artics.co.id</p>
                   </div>
                 </div>
 
@@ -123,14 +121,10 @@ export default function ContactPage() {
                 <div className="space-y-2 text-gray-600">
                   <p className="flex justify-between">
                     <span>Monday - Friday:</span>
-                    <span className="font-medium">9:00 AM - 6:00 PM</span>
+                    <span className="font-medium">08:00 - 19:00 WIB</span>
                   </p>
                   <p className="flex justify-between">
-                    <span>Saturday:</span>
-                    <span className="font-medium">10:00 AM - 4:00 PM</span>
-                  </p>
-                  <p className="flex justify-between">
-                    <span>Sunday:</span>
+                    <span>Saturday - Sunday:</span>
                     <span className="font-medium">Closed</span>
                   </p>
                 </div>
@@ -251,7 +245,7 @@ export default function ContactPage() {
       <section className="bg-white">
         <div className="w-full h-96 bg-gray-200">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.666338919683!2d106.82076431476887!3d-6.176095395528074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sGrand%20Indonesia!5e0!3m2!1sen!2sid!4v1234567890"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1725311355176!2d106.84434307217649!3d-6.240978677625145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f300466b7983%3A0x837aafeba3522562!2sArtics%20Communication!5e0!3m2!1sid!2sid!4v1761913575683!5m2!1sid!2sid"
             width="100%"
             height="100%"
             style={{ border: 0 }}

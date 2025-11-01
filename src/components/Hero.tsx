@@ -63,7 +63,7 @@ export default function Hero() {
             impactful results.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pb-5">
             <button className="group px-8 py-4 bg-[#FF6B35] text-white rounded-full text-lg font-medium hover:bg-[#FF6B35]/90 transition-all transform hover:scale-105 flex items-center space-x-2 shadow-xl">
               <span>Let's Collaborate</span>
               <ArrowRight

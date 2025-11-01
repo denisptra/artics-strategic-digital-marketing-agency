@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import ClientLogos from './components/ClientLogos';
@@ -16,6 +16,22 @@ import ContactPage from './pages/ContactPage';
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
 
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname.replace('/', '') || 'home';
+      setCurrentPage(path);
+    };
+    window.addEventListener('popstate', handlePopState);
+    handlePopState();
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  const handleNavigate = (page: string) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.history.pushState({}, '', page === 'home' ? '/' : `/${page}`);
+  };
+
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
@@ -23,11 +39,11 @@ function App() {
           <>
             <Hero />
             <ClientLogos />
-            <AboutSnapshot onLearnMore={() => setCurrentPage('about')} />
-            <ServicesPreview onExplore={() => setCurrentPage('services')} />
-            <FeaturedWorks onViewAll={() => setCurrentPage('works')} />
+            <AboutSnapshot onLearnMore={() => handleNavigate('about')} />
+            <ServicesPreview onExplore={() => handleNavigate('services')} />
+            <FeaturedWorks onViewAll={() => handleNavigate('works')} />
             <Testimonials />
-            <CTASection onContact={() => setCurrentPage('contact')} />
+            <CTASection onContact={() => handleNavigate('contact')} />
           </>
         );
       case 'about':
@@ -45,9 +61,9 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#F7F9FC]">
-      <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
+      <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
       {renderPage()}
-      <Footer onNavigate={setCurrentPage} />
+      <Footer onNavigate={handleNavigate} />
     </div>
   );
 }
